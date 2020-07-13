@@ -1,13 +1,13 @@
 PROJECT_CLASS?=DegreesOfSeparation
 ARGS?=
 
-build:
-	sbt build
+compile:
+	sbt compile
 
-package: build
+package:
 	sbt  package
 
-generatejar: build package
+generatejar: compile package
 
 spark.run:
 	spark-submit --class com.sundogsoftware.spark.$(PROJECT_CLASS) target/scala-2.12/scala-spark-class1_2.12-0.1.jar $(ARGS)
