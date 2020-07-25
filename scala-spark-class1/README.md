@@ -24,3 +24,8 @@ make generatejar
 3. Java or Scala package that's not pre-loaded
     - Bundle them into your jar
     - Use `-jars` with `spark-submit`
+    
+## books
+- [Learning Spark](https://www.oreilly.com/library/view/learning-spark/9781449359034/)
+- [Learning Scala](https://www.oreilly.com/library/view/learning-scala/9781449368814/)
+- [Advanced Analytics with Spark](https://www.oreilly.com/library/view/advanced-analytics-with/9781491912751/)
