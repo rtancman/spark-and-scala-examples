@@ -12,6 +12,9 @@ make generatejar
 - [Amazon Elastic MapReduce](https://aws.amazon.com/emr/)
 - [Dataproc](https://cloud.google.com/dataproc)
 
+## stream examples
+- [Twitter live streaming](https://dzone.com/articles/twitter-live-streaming-with-spark-streaming-using)
+
 ## Troubleshooting, and Managing Dependencies
 
 1. spark-ui in 127.0.0.1:4040 when you are running scritps on spark. Documentation [here](https://spark.apache.org/docs/latest/monitoring.html).
