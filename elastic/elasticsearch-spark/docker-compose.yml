@@ -1,0 +1,32 @@
+version: '3'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.3.3
+    container_name: elasticsearch_spark
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - elasticsearch_spark
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.3.3
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_URL: http://elasticsearch_spark:9200
+      ELASTICSEARCH_HOSTS: http://elasticsearch_spark:9200
+    networks:
+      - elasticsearch_spark
+
+volumes:
+  es_data:
+    driver: local
+
+networks:
+  elasticsearch_spark:
+    driver: bridge
